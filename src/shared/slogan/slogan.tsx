@@ -1,9 +1,10 @@
+"use client"
 import React from 'react';
 import style from './slogan.module.css';
 
 const Slogan = ({children}) => {
     return (
-        <div className={style.}>
+        <div className={style.sloganHolder}>
             {children}
         </div>
     );
