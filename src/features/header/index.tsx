@@ -3,6 +3,7 @@ import React from 'react';
 import {HeaderWrapper} from "@/features/header/styles";
 import Slogan from "@/shared/slogan/slogan";
 import Naming from "@/shared/naming/naming";
+import Navbar from "@/shared/navbar/navbar";
 
 const Header = () => {
     return (
@@ -16,10 +17,7 @@ const Header = () => {
             <Slogan>
                 Мағжан Жұмабаев
             </Slogan>
-            {
-                /*navbar*/
-            }
-
+            <Navbar/>
         </HeaderWrapper>
     );
 };
