@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import {mainColors} from "@/shared/constants/style/colors";
 export const NavWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -12,7 +13,7 @@ export const NavBox = styled.nav`
   width: 100%;
   display: flex;
   padding: 10px;
-  background-color: #F6F7F9;
+  background-color: ${mainColors.gr};
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -25,18 +26,27 @@ export const NavUlist = styled.ol`
   display: flex;
   margin: 0;
   padding: 0;
+  gap: 10px;
 `
 export const Navlist = styled.li`
-  width: 65%;
+  width: 10%;
   display: flex;
   font-size: 16px;
   justify-content: center;
   align-items: center;
-  color: #172B4D;
+  color: ${mainColors.main};
+`
+export const NavText = styled.div`
+  padding: 4px 10px 4px 10px;
+  border-radius: 15px;
+  border: none;
   &:hover {
-      
+    background-color: ${mainColors.main};
+    color: ${mainColors.gr};
   }
 `
+
+
 
 
 export const NavSearch = styled.div`

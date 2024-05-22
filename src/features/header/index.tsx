@@ -5,7 +5,7 @@ import Slogan from "@/shared/slogan/slogan";
 import Naming from "@/shared/naming/naming";
 import Navbar from "@/shared/navbar/navbar";
 
-const Header = () => {
+const Header: React.FC = () => {
     return (
         <HeaderWrapper>
             <Slogan>
