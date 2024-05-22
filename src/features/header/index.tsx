@@ -16,6 +16,9 @@ const Header = () => {
             <Slogan>
                 Мағжан Жұмабаев
             </Slogan>
+            {
+                /*navbar*/
+            }
 
         </HeaderWrapper>
     );
