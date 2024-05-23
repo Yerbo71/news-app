@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import {mainColors} from "@/shared/constants/style/colors";
+import {mainColors} from "@/shared/constants/colors/colors";
 export const NavWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -37,17 +37,14 @@ export const Navlist = styled.li`
   color: ${mainColors.main};
 `
 export const NavText = styled.div`
-  padding: 4px 10px 4px 10px;
+  padding: 6px 10px 6px 10px;
   border-radius: 15px;
   border: none;
-  &:hover {
+  &:hover, &:active {
     background-color: ${mainColors.main};
     color: ${mainColors.gr};
   }
 `
-
-
-
 
 export const NavSearch = styled.div`
   width: 35%;

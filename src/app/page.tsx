@@ -36,7 +36,6 @@ export default function Home() {
                     ))}
             <div style={{width: '100%'}}>
                 <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
-
             </div>
         </MasonaryLayout>
     );

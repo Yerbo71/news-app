@@ -1,10 +1,13 @@
+"use client";
 import React from 'react';
 import {NavBox, NavUlist, NavSearch, NavWrapper, Navlist, SearchShape, NavText} from "@/shared/navbar/styles";
 import Image from "next/image";
 import search from "../../../public/img/Search.svg"
 import {AppLink} from "../appLink";
+import {useParams} from "next/navigation";
 
 const Navbar = () => {
+
     return (
         <NavWrapper>
             <NavBox>

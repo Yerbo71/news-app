@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {mainColors} from "@/shared/constants/style/colors";
+import {mainColors} from "@/shared/constants/colors/colors";
 
 export const AppCardStyles = styled.div`
   display: flex;

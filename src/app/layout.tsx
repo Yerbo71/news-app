@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import "./styles/globals.css";
+import "@/shared/constants/styles/globals.css";
 import Header from "@/features/header";
 import Footer from "@/features/footer";
 

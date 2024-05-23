@@ -1,13 +1,12 @@
-"use client"
 import React from 'react';
-import {HeaderWrapper} from "@/features/header/styles";
 import Slogan from "@/shared/slogan/slogan";
 import Naming from "@/shared/naming/naming";
 import Navbar from "@/shared/navbar/navbar";
+import styles from "./styles.module.css";
 
-const Header: React.FC = () => {
+const Header = () => {
     return (
-        <HeaderWrapper>
+        <header className={styles.headerWrapper}>
             <Slogan>
                 Мен жастарға сенемін
             </Slogan>
@@ -18,7 +17,7 @@ const Header: React.FC = () => {
                 Мағжан Жұмабаев
             </Slogan>
             <Navbar/>
-        </HeaderWrapper>
+        </header>
     );
 };
 
