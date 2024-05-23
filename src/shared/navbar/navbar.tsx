@@ -2,7 +2,7 @@ import React from 'react';
 import {NavBox, NavUlist, NavSearch, NavWrapper, Navlist, SearchShape, NavText} from "@/shared/navbar/styles";
 import Image from "next/image";
 import search from "../../../public/img/Search.svg"
-import {AppLink} from "@/shared/AppLink";
+import {AppLink} from "../appLink";
 
 const Navbar = () => {
     return (
