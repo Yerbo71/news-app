@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Photo } from "@/features/newsList/types";
-import { getData } from "@/features/newsList/fetch";
+import { getData } from "@/features/fetch/fetch";
 import Pagination from "../shared/pagination/pagination";
 import AppCard from "@/widgets/appCard";
-import {MasonaryLayout} from "@/app/styles";
+import {MasonryLayout} from "@/app/styles";
 
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -28,7 +28,7 @@ export default function Home() {
     };
 
     return (
-        <MasonaryLayout>
+        <MasonryLayout>
                 {photos
                     .filter((photo) => photo.thumbnailUrl)
                     .map((photo) => (
@@ -37,6 +37,6 @@ export default function Home() {
             <div style={{width: '100%'}}>
                 <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
             </div>
-        </MasonaryLayout>
+        </MasonryLayout>
     );
 }

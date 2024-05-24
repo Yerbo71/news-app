@@ -3,11 +3,11 @@ import { Ubuntu } from "next/font/google";
 import "@/shared/constants/styles/globals.css";
 import Header from "@/features/header";
 import Footer from "@/features/footer";
+import React from "react";
 
 const ubuntu = Ubuntu({
   weight: ["400", "500"],
   subsets: ["latin"],
-
 });
 
 export const metadata: Metadata = {

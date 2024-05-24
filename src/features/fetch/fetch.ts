@@ -1,4 +1,4 @@
-import { Photo } from "./types";
+import { Photo } from "../newsList/types";
 
 const PHOTOS_PER_PAGE = 10;
 

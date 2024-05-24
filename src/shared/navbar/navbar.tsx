@@ -1,77 +1,43 @@
 "use client";
 import React from 'react';
-import {NavBox, NavUlist, NavSearch, NavWrapper, Navlist, SearchShape, NavText} from "@/shared/navbar/styles";
+import { NavBox, NavUlist, NavSearch, NavWrapper, Navlist, SearchShape, NavText } from "@/shared/navbar/styles";
 import Image from "next/image";
-import search from "../../../public/img/Search.svg"
-import {AppLink} from "../appLink";
-import {useParams} from "next/navigation";
+import search from "../../../public/img/Search.svg";
+import { AppLink } from "../appLink";
+import { usePathname } from "next/navigation";
+import {Link} from "@/shared/navbar/types";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
+    const pathname = usePathname();
+
+    const links:Link[] = [
+        { href: "/", label: "Ақпарат" },
+        { href: "/adebiet", label: "Әдебиет" },
+        { href: "/oner", label: "Өнер" },
+        { href: "/gylym", label: "Ғылым" },
+        { href: "/exclusive", label: "Эксклюзив" },
+        { href: "/career", label: "Карьера" },
+        { href: "/sport", label: "Спорт" },
+        { href: "/tarih", label: "Тарих" },
+    ];
 
     return (
         <NavWrapper>
             <NavBox>
                 <NavUlist>
-                    <Navlist>
-                        <AppLink href={"/"}>
-                            <NavText>
-                                Ақпарат
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/adebiet"}>
-                            <NavText>
-                                Әдебиет
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/oner"}>
-                            <NavText>
-                                Өнер
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/gylym"}>
-                            <NavText>
-                                Ғылым
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/exclusive"}>
-                            <NavText>
-                                Эксклюзив
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/career"}>
-                            <NavText>
-                                Карьера
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/sport"}>
-                            <NavText>
-                                Спорт
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
-                    <Navlist>
-                        <AppLink href={"/tarih"}>
-                            <NavText>
-                                Тарих
-                            </NavText>
-                        </AppLink>
-                    </Navlist>
+                    {links.map((link) => (
+                        <Navlist key={link.href}>
+                            <AppLink href={link.href}>
+                                <NavText isActive={pathname === link.href}>
+                                    {link.label}
+                                </NavText>
+                            </AppLink>
+                        </Navlist>
+                    ))}
                 </NavUlist>
                 <NavSearch>
                     <SearchShape>
-                        <Image src={search} alt={"Search"} width={20} height={20}/>
+                        <Image src={search} alt={"Search"} width={20} height={20} />
                     </SearchShape>
                 </NavSearch>
             </NavBox>

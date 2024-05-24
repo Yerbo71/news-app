@@ -1,5 +1,9 @@
 import styled from '@emotion/styled'
 import {mainColors} from "@/shared/constants/colors/colors";
+
+interface NavTextProps {
+    isActive: boolean;
+}
 export const NavWrapper = styled.div`
   width: 100%;
   display: flex;
@@ -36,15 +40,19 @@ export const Navlist = styled.li`
   align-items: center;
   color: ${mainColors.main};
 `
-export const NavText = styled.div`
-  padding: 6px 10px 6px 10px;
+export const NavText = styled.div<NavTextProps>`
+  padding: 8px 25px;
   border-radius: 15px;
   border: none;
-  &:hover, &:active {
+  ${({ isActive }) => isActive && `
+    background-color: ${mainColors.main};
+    color: ${mainColors.gr};
+  `}
+  &:hover {
     background-color: ${mainColors.main};
     color: ${mainColors.gr};
   }
-`
+`;
 
 export const NavSearch = styled.div`
   width: 35%;

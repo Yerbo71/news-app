@@ -1,12 +1,19 @@
 "use client"
 import React from 'react';
 import style from './naming.module.css';
+import Link from "next/link";
 
-const Naming = ({children}) => {
+interface NamingProps {
+    children: React.ReactNode
+}
+
+const Naming:React.FC<NamingProps> = ({children}) => {
     return (
-        <div className={style.namingHolder}>
-            {children}
-        </div>
+        <Link href={"/"}>
+            <div className={style.namingHolder}>
+                {children}
+            </div>
+        </Link>
     );
 };
 

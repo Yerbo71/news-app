@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import {mainColors} from "@/shared/constants/colors/colors";
 
-export const MasonaryLayout = styled.main`
-  width: 100%;
+export const MasonryLayout = styled.main`
   background-color: ${mainColors.gr};
   display: flex;
   align-items: center;
