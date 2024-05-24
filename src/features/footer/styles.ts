@@ -14,9 +14,8 @@ export const FooterBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  opacity: 0.7;
+  padding-top: 32px;
+  padding-bottom: 32px;
 `
 export const FooterHr = styled.hr`
   width: 100%;

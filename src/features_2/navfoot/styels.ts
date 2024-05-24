@@ -10,15 +10,15 @@ export const NavFootUList = styled.ol`
 
 export const NavFootList = styled.li`
   display: flex;
-  gap: 15px;
+  gap: 20px;
   font-size: 16px;
   justify-content: center;
   align-items: center;
-  color: ${mainColors.gr};
+  color: white;
 `
 
 export const FootLink = styled(Link)`
   text-decoration: none;
-  color:${mainColors.gr} ;
+  color:white;
   transition: all 0.3s ease;
 `

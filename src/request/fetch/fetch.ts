@@ -1,4 +1,4 @@
-import { Photo } from "../newsList/types";
+import { Photo } from "@/app/types";
 
 const PHOTOS_PER_PAGE = 10;
 
@@ -7,9 +7,11 @@ export const getData = async (page: number, query?: string): Promise<Photo[]> =>
         const url = new URL('https://jsonplaceholder.typicode.com/photos');
         url.searchParams.append('_page', page.toString());
         url.searchParams.append('_limit', PHOTOS_PER_PAGE.toString());
+        console.log("base")
 
         if (query) {
-            url.searchParams.append('title_like', query);
+            url.searchParams.append('/', query.toString());
+            console.log("title")
         }
 
         const res = await fetch(url.toString(), {

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Photo } from "@/features/newsList/types";
+import { Photo } from "@/app/types";
 import {AppCardImage, AppCardImageHolder, AppCardStyles, AppCardTitleHolder} from "@/widgets/appCard/styles";
 
 interface AppCardProps {

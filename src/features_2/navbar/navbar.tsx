@@ -1,13 +1,22 @@
 "use client";
-import React, {useEffect, useState} from 'react';
-import { NavBox, NavUlist, NavSearch, NavWrapper, Navlist, SearchShape, NavText } from "@/features_2/navbar/styles";
+import React, { useEffect, useState } from 'react';
+import {
+    NavBox,
+    NavUlist,
+    NavSearch,
+    NavWrapper,
+    Navlist,
+    SearchShape,
+    NavText,
+    FormSearch
+} from "@/features_2/navbar/styles";
 import Image from "next/image";
 import search from "../../../public/img/Search.svg";
-import { AppLink } from "../../shared/appLink";
+import { AppLink } from "@/shared/appLink";
 import { usePathname } from "next/navigation";
-import {Link} from "@/features_2/navbar/types";
-import {AppInput} from "@/shared/appInput";
-import {getData} from "@/features/fetch/fetch";
+import { Link } from "@/features_2/navbar/types";
+import { AppInput } from "@/shared/appInput";
+import { getData } from "@/request/fetch/fetch";
 
 const Navbar: React.FC = () => {
     const pathname = usePathname();
@@ -15,7 +24,7 @@ const Navbar: React.FC = () => {
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(1);
 
-    const links:Link[] = [
+    const links: Link[] = [
         { href: "/", label: "Ақпарат" },
         { href: "/adebiet", label: "Әдебиет" },
         { href: "/oner", label: "Өнер" },
@@ -26,12 +35,18 @@ const Navbar: React.FC = () => {
         { href: "/tarih", label: "Тарих" },
     ];
 
-    useEffect(() => {
-        const fetchPhotos = async () => {
-            const data = await getData(page, query);
-        };
+    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        fetchData();
+    };
 
-        fetchPhotos();
+    const fetchData = async () => {
+        const data = await getData(page, query);
+        console.log("Data fetched:", data);
+    };
+
+    useEffect(() => {
+        fetchData();
     }, [query, page]);
 
     return (
@@ -49,10 +64,12 @@ const Navbar: React.FC = () => {
                     ))}
                 </NavUlist>
                 <NavSearch>
-                    {isInput && <AppInput type="text" placeholder="Ізде" />}
-                    <SearchShape>
-                        <Image src={search} alt={"Search"} width={20} height={20} onClick={()=>setIsInput(!isInput)} />
-                    </SearchShape>
+                    <FormSearch onSubmit={handleFormSubmit}>
+                        {isInput && <AppInput type="text" placeholder="Ізде" value={query} onChange={(e) => setQuery(e.target.value)} />}
+                        <SearchShape>
+                            <Image src={search} alt={"Search"} width={20} height={20} onClick={() => setIsInput(!isInput)} />
+                        </SearchShape>
+                    </FormSearch>
                 </NavSearch>
             </NavBox>
         </NavWrapper>

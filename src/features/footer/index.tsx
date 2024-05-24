@@ -10,11 +10,11 @@ const Footer = () => {
                 <NavFoot/>
             </FooterBox>
             <FooterHr/>
-            <FooterBox>
+            <FooterBox style={{opacity: 0.7}}>
                 Байлыныс үшін: magzhankz@gmail.com
             </FooterBox>
             <FooterHr/>
-            <FooterBox>
+            <FooterBox style={{opacity: 0.7}}>
                 Барлық құқықтар сақталған@2024
             </FooterBox>
         </FooterWrapper>

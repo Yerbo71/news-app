@@ -60,6 +60,11 @@ export const NavSearch = styled.div`
   align-items: center;
   gap: 15px;
 `
+
+export const FormSearch = styled.form`
+  display: flex;
+  gap: 10px;
+`
 export const SearchShape = styled.div`
   padding: 6px 8px 6px 8px;
   border: none;

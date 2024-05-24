@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Photo } from "@/features/newsList/types";
-import { getData } from "@/features/fetch/fetch";
+import { Photo } from "@/app/types";
+import { getData } from "@/request/fetch/fetch";
 import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
 import {MasonryLayout} from "@/app/styles";
@@ -34,9 +34,7 @@ export default function Home() {
                     .map((photo) => (
                         <AppCard key={photo.id} photo={photo} />
                     ))}
-            <div style={{width: '100%'}}>
                 <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
-            </div>
         </MasonryLayout>
     );
 }
