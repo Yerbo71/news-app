@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Photo } from "@/features/newsList/types";
 import { getData } from "@/features/fetch/fetch";
-import Pagination from "../shared/pagination/pagination";
+import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
 import {MasonryLayout} from "@/app/styles";
 

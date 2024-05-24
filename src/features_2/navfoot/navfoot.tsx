@@ -1,5 +1,5 @@
 import React from 'react';
-import {FootLink, NavFootList, NavFootUList} from "@/shared/navfoot/styels";
+import {FootLink, NavFootList, NavFootUList} from "@/features_2/navfoot/styels";
 
 const NavFoot = () => {
     return (

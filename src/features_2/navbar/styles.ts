@@ -18,9 +18,8 @@ export const NavBox = styled.nav`
   display: flex;
   padding: 10px;
   background-color: ${mainColors.gr};
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  flex-wrap: wrap;
   border: none;
   border-radius: 30px;
 `
@@ -30,18 +29,18 @@ export const NavUlist = styled.ol`
   display: flex;
   margin: 0;
   padding: 0;
-  gap: 10px;
+  gap: 15px;
 `
 export const Navlist = styled.li`
   width: 10%;
   display: flex;
   font-size: 16px;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   color: ${mainColors.main};
 `
 export const NavText = styled.div<NavTextProps>`
-  padding: 8px 25px;
+  padding: 8px 15px;
   border-radius: 15px;
   border: none;
   ${({ isActive }) => isActive && `
@@ -59,6 +58,7 @@ export const NavSearch = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  gap: 15px;
 `
 export const SearchShape = styled.div`
   padding: 6px 8px 6px 8px;

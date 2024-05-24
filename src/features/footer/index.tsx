@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import {FooterBox, FooterHr, FooterWrapper} from "@/features/footer/styles";
-import NavFoot from "@/shared/navfoot/navfoot";
+import NavFoot from "@/features_2/navfoot/navfoot";
 
 const Footer = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
-import Slogan from "@/shared/slogan/slogan";
-import Naming from "@/shared/naming/naming";
-import Navbar from "@/shared/navbar/navbar";
+import Slogan from "@/shared/appSlogan/slogan";
+import Naming from "@/shared/appNaming/naming";
+import Navbar from "@/features_2/navbar/navbar";
 import styles from "./styles.module.css";
 
 const Header = () => {
