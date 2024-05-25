@@ -1,0 +1,24 @@
+.footerWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #172B4D;
+    color: #F6F7F9;
+}
+
+.footerBox{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.footerHr{
+    width: 100%;
+    border: 1px solid #F6F7F9;
+    opacity: 0.1;
+}
