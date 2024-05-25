@@ -2,7 +2,6 @@
     width: 100%;
     display: flex;
     color: #172B4D;
-    background-color: #F6F7F9;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -17,14 +16,18 @@
     align-items: center;
     text-align: center;
 }
-.divholder{
+.divHolder{
     width: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: start;
+    flex-wrap: wrap;
 }
 
-.tagholder{
+.tagHolder{
     padding: 3px 8px 6px 8px;
     border: none;
     background-color: #4B68A1;
@@ -35,7 +38,54 @@
 .img{
     width: 100%;
     border-radius: 40px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+}
+.horline{
+    border: 2px solid #E5E5E5;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
+.quoteHolder{
+    width: 100%;
+    font-style: italic;
+    font-size: 24px;
+    text-align: start;
+}
+.buttonHolder{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+.commentsHolder {
+    width: 100%;
+    display: flex;
+    text-align: start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.commentTitle {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.commentInputHolder{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }

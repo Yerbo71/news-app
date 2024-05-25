@@ -5,7 +5,7 @@ import { getData } from "@/request/fetch/fetch";
 import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
 import {MasonryLayout} from "@/app/styles";
-import {AppLoader} from "../widgets/appLoader";
+import {AppLoader} from "@/widgets/appLoader";
 
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);

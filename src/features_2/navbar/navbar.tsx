@@ -11,7 +11,7 @@ import {
     FormSearch
 } from "@/features_2/navbar/styles";
 import Image from "next/image";
-import search from "../../../public/img/Search.svg";
+import search from "../../../public/svg/Search.svg";
 import { AppLink } from "@/shared/appLink";
 import { usePathname } from "next/navigation";
 import { Link } from "@/features_2/navbar/types";
