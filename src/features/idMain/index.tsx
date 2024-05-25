@@ -12,6 +12,7 @@ import Image from "next/image";
 import Comment from '../../features_2/comment/comment';
 import {AppCommentButton} from "@/shared/appCommentButton";
 import {AppCommentInput} from "@/shared/appCommentInput";
+import Recommendation from "@/features_2/recommendation";
 
 
 interface CommentData {
@@ -94,7 +95,7 @@ const IdMain: React.FC<IdMainProps> = ({ props }) => {
     };
 
     return (
-        <main className={styles.mainWrapper}>
+        <div className={styles.mainWrapper}>
             <div className={styles.mainBox}>
                 <div className={styles.divHolder}>
                     <h1 style={{ margin: '0' }}>{props.title}</h1>
@@ -172,7 +173,8 @@ const IdMain: React.FC<IdMainProps> = ({ props }) => {
                     </div>
                 </div>
             </div>
-        </main>
+            <Recommendation/>
+        </div>
     );
 };
 

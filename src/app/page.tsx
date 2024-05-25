@@ -10,13 +10,14 @@ import {AppLoader} from "@/widgets/appLoader";
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await getData(currentPage);
             setPhotos(data);
+            setLoading(!loading);
         };
-
         fetchData();
     }, [currentPage]);
 
@@ -30,14 +31,14 @@ export default function Home() {
 
     return (
         <MasonryLayout>
-            <Suspense fallback={<AppLoader/>}>
+            {loading && <AppLoader />}
                 {photos
                     .filter((photo) => photo.thumbnailUrl)
                     .map((photo) => (
                         <AppCard key={photo.id} photo={photo} />
                     ))}
                 <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
-            </Suspense>
+
         </MasonryLayout>
     );
 }
