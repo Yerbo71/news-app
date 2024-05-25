@@ -9,11 +9,3 @@ export const MainLayout = styled.main`
   flex-wrap: wrap;
   padding: 15px;
 `
-
-export const MasonryLayout = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 15px;
-`
-
