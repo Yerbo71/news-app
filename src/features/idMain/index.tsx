@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { IdMainProps } from './types';
+import {CommentData, IdMainProps} from './types';
 import styles from './styles.module.css';
 import likee from '../../../public/svg/Like.svg';
 import facebook from '../../../public/svg/FaceBook.svg';
@@ -13,15 +13,12 @@ import Comment from '../../features_2/comment/comment';
 import {AppCommentButton} from "@/shared/appCommentButton";
 import {AppCommentInput} from "@/shared/appCommentInput";
 import Recommendation from "@/features_2/recommendation";
+import IdMainContent from "@/features/idMain/components/IdMainContent";
+import {MainBox, MainWrapper} from "@/features/idMain/styles";
+import IdMainActions from "@/features/idMain/components/IdMainActions";
+import IdMainComSection from "@/features/idMain/components/IdMainComSection";
 
 
-interface CommentData {
-    id: number;
-    author: string;
-    image: string;
-    text: string;
-    canEditDelete: boolean;
-}
 
 const IdMain: React.FC<IdMainProps> = ({ props }) => {
     const [like, setLike] = useState(25);
@@ -49,9 +46,6 @@ const IdMain: React.FC<IdMainProps> = ({ props }) => {
     ]);
     const [newComment, setNewComment] = useState("");
 
-    const repeatedTitle1 = Array(15).fill(props.title).join(' ');
-    const repeatedTitle2 = Array(9).fill(props.title).join(' ');
-    const repeatedTitle3 = Array(18).fill(props.title).join(' ');
 
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
@@ -95,86 +89,14 @@ const IdMain: React.FC<IdMainProps> = ({ props }) => {
     };
 
     return (
-        <div className={styles.mainWrapper}>
-            <div className={styles.mainBox}>
-                <div className={styles.divHolder}>
-                    <h1 style={{ margin: '0' }}>{props.title}</h1>
-                </div>
-                <div className={styles.divHolder}>
-                    <div className={styles.tagHolder}>Ақпарат</div>
-                    <div>12 қараша 2019</div>
-                </div>
-                <div className={styles.divHolder}>
-                    <img src={props.url} alt={props.title} className={styles.img} />
-                </div>
-                <div className={styles.divHolder}>
-                    <p>{repeatedTitle1}</p>
-                    <p>{repeatedTitle2}</p>
-                    <p>{repeatedTitle3}</p>
-                </div>
-
-                <div className={styles.horline} />
-
-                <div className={styles.quoteHolder}>
-                    <p>{repeatedTitle2}</p>
-                </div>
-
-                <div className={styles.horline} />
-
-                <div className={styles.divHolder}>
-                    <p>{repeatedTitle1}</p>
-                    <p>{repeatedTitle2}</p>
-                    <p>{repeatedTitle3}</p>
-                </div>
-
-                <div className={styles.divHolder}>
-                    <img src={props.url} alt={props.title} className={styles.img} />
-                </div>
-
-                <div className={styles.buttonHolder}>
-                    <AppInteractiveButton onClick={handleLikeClick} isliked={isLiked}>
-                        <Image src={likee} alt="like" />
-                        {isLiked ? "Ұнады" : "Ұнайды"} {like}
-                    </AppInteractiveButton>
-                    <AppInteractiveButton onClick={() => handleShareClick('facebook')} isliked={false}>
-                        <Image src={facebook} alt="facebook" />
-                    </AppInteractiveButton>
-                    <AppInteractiveButton onClick={() => handleShareClick('twitter')} isliked={false}>
-                        <Image src={twitter} alt="twitter" />
-                    </AppInteractiveButton>
-                    <AppInteractiveButton onClick={() => handleShareClick('vk')} isliked={false}>
-                        <Image src={vk} alt="vk" />
-                    </AppInteractiveButton>
-                </div>
-
-                <div className={styles.commentsHolder}>
-                    <h3 className={styles.commentTitle}>Comments ({comments.length})</h3>
-                    <div >
-                        {comments.map(comment => (
-                            <Comment
-                                key={comment.id}
-                                id={comment.id}
-                                text={comment.text}
-                                image={comment.image}
-                                author={comment.author}
-                                canEditDelete={comment.canEditDelete}
-                                onDelete={handleDeleteComment}
-                                onEdit={handleEditComment}
-                            />
-                        ))}
-                    </div>
-                    <div className={styles.commentInputHolder}>
-                        <AppCommentInput
-                            value={newComment}
-                            onChange={(e) => setNewComment(e.target.value)}
-                            placeholder="Пікіріңізді жазыңыз..."
-                        />
-                        <AppCommentButton onClick={handleAddComment}>Қосу</AppCommentButton>
-                    </div>
-                </div>
-            </div>
+        <MainWrapper>
+            <MainBox>
+                <IdMainContent albumId={props.albumId} id={props.id} title={props.title} url={props.url} thumbnailUrl={props.thumbnailUrl}/>
+                <IdMainActions handleLikeClick={handleLikeClick} handleShareClick={handleShareClick} isLiked={isLiked} like={like}/>
+                <IdMainComSection comments={comments} newComment={newComment} setNewComment={setNewComment} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment} handleEditComment={handleEditComment}/>
+            </MainBox>
             <Recommendation/>
-        </div>
+        </MainWrapper>
     );
 };
 
