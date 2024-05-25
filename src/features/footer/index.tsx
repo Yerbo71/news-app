@@ -1,6 +1,3 @@
-"use client";
-import React from 'react';
-import {FooterBox, FooterHr, FooterWrapper} from "@/features/footer/styles";
 import NavFoot from "@/features_2/navfoot/navfoot";
 import styles from './styles.module.css'
 
