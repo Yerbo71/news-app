@@ -4,8 +4,9 @@ import { Photo } from "@/app/types";
 import { getData } from "@/request/fetch/fetch";
 import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
-import {MasonryLayout} from "@/app/styles";
+import {MainLayout, MasonryLayout} from "@/app/styles";
 import {AppLoader} from "@/widgets/appLoader";
+import Masonry from "react-layout-masonry";
 
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -30,15 +31,16 @@ export default function Home() {
     };
 
     return (
-        <MasonryLayout>
-            {loading && <AppLoader />}
-                {photos
-                    .filter((photo) => photo.thumbnailUrl)
-                    .map((photo) => (
-                        <AppCard key={photo.id} photo={photo} />
-                    ))}
-                <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
-
-        </MasonryLayout>
+        <MainLayout>
+                <Masonry columns={3} gap={16}>
+                    {loading && <AppLoader />}
+                    {photos
+                        .filter((photo) => photo.thumbnailUrl)
+                        .map((photo) => (
+                            <AppCard key={photo.id} photo={photo} />
+                        ))}
+                </Masonry>
+            <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
+        </MainLayout>
     );
 }

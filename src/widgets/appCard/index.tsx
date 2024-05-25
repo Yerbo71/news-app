@@ -1,7 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { Photo } from "@/app/types";
-import {AppCardImage, AppCardImageHolder, AppCardStyles, AppCardTitleHolder} from "@/widgets/appCard/styles";
+import {
+    AppCardImage,
+    AppCardImageHolder,
+    AppCardStyles,
+    AppCardTitleHolder
+} from "@/widgets/appCard/styles";
 
 interface AppCardProps {
     photo: Photo;
@@ -17,7 +22,6 @@ const AppCard: React.FC<AppCardProps> = ({ photo }) => {
                 <AppCardTitleHolder>
                     {photo.title}
                 </AppCardTitleHolder>
-
             </AppCardStyles>
         </Link>
     );

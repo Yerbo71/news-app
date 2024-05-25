@@ -1,7 +1,10 @@
 import styled from "@emotion/styled";
 import {mainColors} from "@/shared/constants/colors/colors";
 
+
+
 export const AppCardStyles = styled.div`
+  width: 370px;
   display: flex;
   padding: 24px;
   border: none;
@@ -9,7 +12,6 @@ export const AppCardStyles = styled.div`
   background-color: white;
   flex-wrap: wrap;
   align-items: center;
-  width: 370px;
   gap: 15px;
 `
 

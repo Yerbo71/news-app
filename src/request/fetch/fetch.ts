@@ -1,6 +1,6 @@
 import { Photo } from "@/app/types";
 
-const PHOTOS_PER_PAGE = 10;
+const PHOTOS_PER_PAGE = 12;
 
 export const getData = async (page: number, query?: string): Promise<Photo[]> => {
     try {
