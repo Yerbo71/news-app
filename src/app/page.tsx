@@ -1,8 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
 import dynamic from 'next/dynamic';
-import { Photo } from "@/app/types";
-import { getData } from "@/request/fetch/fetch";
+import { usePhotos } from "@/app/model";
 import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
 import { MainLayout } from "@/app/styles";
@@ -12,27 +10,7 @@ import { AppLoader } from "@/widgets/appLoader";
 const Masonry = dynamic(() => import("react-layout-masonry"), { ssr: false });
 
 export default function Home() {
-    const [photos, setPhotos] = useState<Photo[]>([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            setLoading(true);
-            const data = await getData(currentPage);
-            setPhotos(data);
-            setLoading(false);
-        };
-        fetchData();
-    }, [currentPage]);
-
-    const handleNextPage = () => {
-        setCurrentPage((prevPage) => prevPage + 1);
-    };
-
-    const handlePreviousPage = () => {
-        setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-    };
+    const { photos, loading, currentPage, handleNextPage, handlePreviousPage } = usePhotos();
 
     return (
         <MainLayout>

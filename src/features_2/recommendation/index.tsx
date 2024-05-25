@@ -1,16 +1,27 @@
+import React, { useEffect, useState } from 'react';
 import { fetchPhotos } from "./fetch";
 import { Photo } from "@/app/types";
-import {FlexLayout} from "@/features_2/recommendation/styles";
+import { FlexLayout } from "@/features_2/recommendation/styles";
 import AppCard from "@/widgets/appCard";
 
+function Recommendation() {
+    const [photos, setPhotos] = useState<Photo[]>([]);
 
-export default async function Recommendation() {
-    const photos: Photo[] = await fetchPhotos();
+    useEffect(() => {
+        const fetchData = async () => {
+            const fetchedPhotos: Photo[] = await fetchPhotos();
+            setPhotos(fetchedPhotos);
+        };
+        fetchData();
+    }, []);
+
     return (
         <FlexLayout>
             {photos.map(photo => (
-                <AppCard photo={photo}/>
+                <AppCard key={photo.id} photo={photo} />
             ))}
         </FlexLayout>
     );
 }
+
+export default Recommendation;

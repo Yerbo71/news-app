@@ -16,7 +16,7 @@ import { AppLink } from "@/shared/appLink";
 import { usePathname } from "next/navigation";
 import { Link } from "@/features_2/navbar/types";
 import { AppInput } from "@/shared/appInput";
-import { getData } from "@/request/fetch/fetch";
+import { getData } from "@/request/mainFetch/fetch";
 
 const Navbar: React.FC = () => {
     const pathname = usePathname();

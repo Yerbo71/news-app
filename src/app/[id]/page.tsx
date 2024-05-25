@@ -1,22 +1,18 @@
-import {Metadata} from "next";
-import {Props} from "./types";
+import { Metadata } from "next";
+import { Props } from "./types";
 import IdMain from "@/features/idMain";
-async function getData(id:string) {
-    try {
-        const res = await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`);
-        return res.json();
-    } catch (error) {
-        console.log(error);
-    }
-}
-export async function generateMetadata({params:{id}}: Props):Promise<Metadata> {
+import { generateTitle } from "./model";
+import { fetchData } from "@/request/idFetch";
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
+    const title = generateTitle(id);
     return {
-        title: `News ${id}`,
-    }
+        title,
+    };
 }
-export default async function News({params: {id}}: Props) {
-    const photos = await getData(id);
+
+export default async function News({ params: { id } }: Props) {
+    const photos = await fetchData(id);
     return (
-        <IdMain props={photos}/>
+        <IdMain props={photos} />
     );
 }

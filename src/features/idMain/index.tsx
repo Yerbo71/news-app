@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Photo, IdMainProps } from './types';
+import { IdMainProps } from './types';
 import styles from './styles.module.css';
 import likee from '../../../public/svg/Like.svg';
 import facebook from '../../../public/svg/FaceBook.svg';
