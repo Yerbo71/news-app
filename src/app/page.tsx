@@ -1,10 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import {useState, useEffect, Suspense} from "react";
 import { Photo } from "@/app/types";
 import { getData } from "@/request/fetch/fetch";
 import Pagination from "@/features_2/pagination/pagination";
 import AppCard from "@/widgets/appCard";
 import {MasonryLayout} from "@/app/styles";
+import {AppLoader} from "@/shared/appLoader";
 
 export default function Home() {
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -29,12 +30,14 @@ export default function Home() {
 
     return (
         <MasonryLayout>
+            <Suspense fallback={<AppLoader/>}>
                 {photos
                     .filter((photo) => photo.thumbnailUrl)
                     .map((photo) => (
                         <AppCard key={photo.id} photo={photo} />
                     ))}
                 <Pagination currentPage={currentPage} onPrevious={handlePreviousPage} onNext={handleNextPage} />
+            </Suspense>
         </MasonryLayout>
     );
 }
