@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from 'react';
 import style from './naming.module.css';
 import Link from "next/link";

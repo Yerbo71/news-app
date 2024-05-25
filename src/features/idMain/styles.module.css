@@ -1,0 +1,41 @@
+.mainWrapper {
+    width: 100%;
+    display: flex;
+    color: #172B4D;
+    background-color: #F6F7F9;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mainBox {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.divholder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tagholder{
+    padding: 3px 8px 6px 8px;
+    border: none;
+    background-color: #4B68A1;
+    color: white;
+    border-radius: 15px;
+}
+
+.img{
+    width: 100%;
+    border-radius: 40px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+}
