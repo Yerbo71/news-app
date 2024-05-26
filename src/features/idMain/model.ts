@@ -4,23 +4,31 @@ import {CommentData} from "@/features/idMain/types";
 export const useIdMainModel = () => {
     const [like, setLike] = useState(25);
     const [isLiked, setIsLiked] = useState(false);
+    const [newComment, setNewComment] = useState("");
     const [comments, setComments] = useState<CommentData[]>([
         {
             id: 1,
             author: "azamat20@gmail.com",
             image: "/svg/User.svg",
-            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            text: "Lorem ipsum dolor sit amet," +
+                " consectetur adipiscing elit," +
+                " sed do eiusmod tempor incididunt" +
+                " ut labore et dolore magna aliqua." +
+                " Ut enim ad minim veniam, quis nostrud" +
+                " exercitation ullamco laboris nisi" +
+                " ut aliquip ex ea commodo consequat.",
             canEditDelete: false
         },
         {
             id: 2,
             author: "ala1346@gmail.com",
             image: "/svg/User.svg",
-            text: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore",
+            text: "Sed ut perspiciatis unde omnis iste natus error" +
+                " sit voluptatem accusantium doloremque laudantium," +
+                " totam rem aperiam, eaque ipsa quae ab illo inventore",
             canEditDelete: false
         }
     ]);
-    const [newComment, setNewComment] = useState("");
 
     const handleLikeClick = () => {
         setIsLiked(!isLiked);
@@ -50,7 +58,16 @@ export const useIdMainModel = () => {
 
     const handleAddComment = () => {
         if (newComment.trim()) {
-            setComments([...comments, { id: Date.now(), author: "Сіз", image: "/svg/User.svg", text: newComment, canEditDelete: true }]);
+            setComments([
+                ...comments,
+                {
+                    id: Date.now(),
+                    author: "Сіз",
+                    image: "/svg/User.svg",
+                    text: newComment,
+                    canEditDelete: true
+                }
+            ]);
             setNewComment("");
         }
     };
@@ -60,7 +77,11 @@ export const useIdMainModel = () => {
     };
 
     const handleEditComment = (id: number, newText: string) => {
-        setComments(comments.map(comment => comment.id === id ? { ...comment, text: newText } : comment));
+        setComments(
+            comments.map(
+                comment => comment.id === id ? { ...comment, text: newText } : comment
+            )
+        );
     };
 
     return {

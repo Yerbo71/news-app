@@ -14,7 +14,13 @@ interface IdMainActionsProps {
     like: number;
 }
 
-const IdMainActions: React.FC<IdMainActionsProps> = ({ handleLikeClick, handleShareClick, isLiked, like }) => {
+const IdMainActions: React.FC<IdMainActionsProps> = (
+    {
+        handleLikeClick,
+        handleShareClick,
+        isLiked,
+        like
+    }) => {
     return (
         <div className={styles.buttonHolder}>
             <AppInteractiveButton onClick={handleLikeClick} isliked={isLiked}>

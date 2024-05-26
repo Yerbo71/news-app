@@ -25,9 +25,27 @@ const IdMain: React.FC<IdMainProps> = ({ props }) => {
     return (
         <MainWrapper>
             <MainBox>
-                <IdMainContent albumId={props.albumId} id={props.id} title={props.title} url={props.url} thumbnailUrl={props.thumbnailUrl} />
-                <IdMainActions handleLikeClick={handleLikeClick} handleShareClick={handleShareClick} isLiked={isLiked} like={like} />
-                <IdMainComSection comments={comments} newComment={newComment} setNewComment={setNewComment} handleAddComment={handleAddComment} handleDeleteComment={handleDeleteComment} handleEditComment={handleEditComment} />
+                <IdMainContent
+                    albumId={props.albumId}
+                    id={props.id}
+                    title={props.title}
+                    url={props.url}
+                    thumbnailUrl={props.thumbnailUrl}
+                />
+                <IdMainActions
+                    handleLikeClick={handleLikeClick}
+                    handleShareClick={handleShareClick}
+                    isLiked={isLiked}
+                    like={like}
+                />
+                <IdMainComSection
+                    comments={comments}
+                    newComment={newComment}
+                    setNewComment={setNewComment}
+                    handleAddComment={handleAddComment}
+                    handleDeleteComment={handleDeleteComment}
+                    handleEditComment={handleEditComment}
+                />
             </MainBox>
             <Recommendation />
         </MainWrapper>
