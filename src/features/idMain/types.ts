@@ -1,8 +1,3 @@
-export interface Props {
-    params: {
-        id: string;
-    };
-}
 
 export interface Photo {
     albumId: number;

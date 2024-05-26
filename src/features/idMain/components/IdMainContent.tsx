@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "@/features/idMain/styles.module.css";
+import styles from "@/features/idMain/components/styles.module.css";
 import {Photo} from "@/features/idMain/types";
 
 const IdMainContent = (props: Photo) => {

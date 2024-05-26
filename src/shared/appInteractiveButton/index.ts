@@ -15,7 +15,7 @@ export const AppInteractiveButton = styled.button<ButtonProps>`
     color: ${mainColors.main};
     cursor: pointer;
     font-size: 16px;
-    padding: 12px 60px;
+    padding: 12px 40px;
     transition: all 0.3s ease;
     &:hover {
         background-color: ${mainColors.red};

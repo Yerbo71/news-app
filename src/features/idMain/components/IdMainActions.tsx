@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles.module.css';
+import styles from './styles.module.css';
 import { AppInteractiveButton } from "@/shared/appInteractiveButton";
 import Image from "next/image";
 import likee from '../../../../public/svg/Like.svg';

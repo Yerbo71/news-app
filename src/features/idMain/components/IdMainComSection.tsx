@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../styles.module.css';
-import Comment from '../../../features_2/comment/comment'; // Assuming Comment component is also defined in the same directory
+import styles from './styles.module.css';
+import Comment from '../../../features_2/comment/comment';
 import { AppCommentInput } from "@/shared/appCommentInput";
 import { AppCommentButton } from "@/shared/appCommentButton";
 import { CommentData } from '../types';
